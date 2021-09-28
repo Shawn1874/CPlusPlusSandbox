@@ -1,0 +1,56 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Other
+*.sdf
+
+# Python cache files
+*.pyc
+
+# Directories
+Release/
+Debug/
+packages/
+.vs/
+ipch/
+__pycache__
+*.db
+Packages/
+*.opendb
+*.ide
+*.lock
+*.ide-wal
+*.ide-shm
+*.db-shm
+*.db-wal
+
