@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Containers", "Containers\Containers.vcxproj", "{1CF7CEDC-005A-45BB-ABFF-493432E8EFAF}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Streams", "Streams\Streams.vcxproj", "{A22BA1BF-D807-4D4F-AE22-86E9DACBDEDE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GTests", "GTests", "{51F1529C-BC45-4272-91E1-5146BA614533}"
@@ -12,6 +10,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ContainerTests", "ContainerTests\ContainerTests.vcxproj", "{25653E6A-DDEE-40D8-9EAB-F21D59B7AB47}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AlgorithmsTests", "AlgorithmsTests\AlgorithmsTests.vcxproj", "{A9100E3C-D19A-4926-A1AB-734BC84DB4D1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sandbox", "Sandbox\Sandbox.vcxproj", "{4CDBFD18-4777-4A0A-813E-8580AE0511B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,18 +25,6 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1CF7CEDC-005A-45BB-ABFF-493432E8EFAF}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{1CF7CEDC-005A-45BB-ABFF-493432E8EFAF}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
-		{1CF7CEDC-005A-45BB-ABFF-493432E8EFAF}.Debug|Mixed Platforms.Build.0 = Debug|Win32
-		{1CF7CEDC-005A-45BB-ABFF-493432E8EFAF}.Debug|Win32.ActiveCfg = Debug|Win32
-		{1CF7CEDC-005A-45BB-ABFF-493432E8EFAF}.Debug|Win32.Build.0 = Debug|Win32
-		{1CF7CEDC-005A-45BB-ABFF-493432E8EFAF}.Debug|x64.ActiveCfg = Debug|Win32
-		{1CF7CEDC-005A-45BB-ABFF-493432E8EFAF}.Release|Any CPU.ActiveCfg = Release|Win32
-		{1CF7CEDC-005A-45BB-ABFF-493432E8EFAF}.Release|Mixed Platforms.ActiveCfg = Release|Win32
-		{1CF7CEDC-005A-45BB-ABFF-493432E8EFAF}.Release|Mixed Platforms.Build.0 = Release|Win32
-		{1CF7CEDC-005A-45BB-ABFF-493432E8EFAF}.Release|Win32.ActiveCfg = Release|Win32
-		{1CF7CEDC-005A-45BB-ABFF-493432E8EFAF}.Release|Win32.Build.0 = Release|Win32
-		{1CF7CEDC-005A-45BB-ABFF-493432E8EFAF}.Release|x64.ActiveCfg = Release|Win32
 		{A22BA1BF-D807-4D4F-AE22-86E9DACBDEDE}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{A22BA1BF-D807-4D4F-AE22-86E9DACBDEDE}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
 		{A22BA1BF-D807-4D4F-AE22-86E9DACBDEDE}.Debug|Mixed Platforms.Build.0 = Debug|Win32
@@ -79,6 +67,20 @@ Global
 		{A9100E3C-D19A-4926-A1AB-734BC84DB4D1}.Release|Win32.Build.0 = Release|Win32
 		{A9100E3C-D19A-4926-A1AB-734BC84DB4D1}.Release|x64.ActiveCfg = Release|x64
 		{A9100E3C-D19A-4926-A1AB-734BC84DB4D1}.Release|x64.Build.0 = Release|x64
+		{4CDBFD18-4777-4A0A-813E-8580AE0511B6}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{4CDBFD18-4777-4A0A-813E-8580AE0511B6}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{4CDBFD18-4777-4A0A-813E-8580AE0511B6}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{4CDBFD18-4777-4A0A-813E-8580AE0511B6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4CDBFD18-4777-4A0A-813E-8580AE0511B6}.Debug|Win32.Build.0 = Debug|Win32
+		{4CDBFD18-4777-4A0A-813E-8580AE0511B6}.Debug|x64.ActiveCfg = Debug|x64
+		{4CDBFD18-4777-4A0A-813E-8580AE0511B6}.Debug|x64.Build.0 = Debug|x64
+		{4CDBFD18-4777-4A0A-813E-8580AE0511B6}.Release|Any CPU.ActiveCfg = Release|Win32
+		{4CDBFD18-4777-4A0A-813E-8580AE0511B6}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{4CDBFD18-4777-4A0A-813E-8580AE0511B6}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{4CDBFD18-4777-4A0A-813E-8580AE0511B6}.Release|Win32.ActiveCfg = Release|Win32
+		{4CDBFD18-4777-4A0A-813E-8580AE0511B6}.Release|Win32.Build.0 = Release|Win32
+		{4CDBFD18-4777-4A0A-813E-8580AE0511B6}.Release|x64.ActiveCfg = Release|x64
+		{4CDBFD18-4777-4A0A-813E-8580AE0511B6}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

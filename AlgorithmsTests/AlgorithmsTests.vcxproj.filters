@@ -92,6 +92,9 @@
     <ClCompile Include="TestFileIOApis.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AnagramSolverTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
