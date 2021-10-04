@@ -1,7 +1,9 @@
 #include "AnagramSolver.h"
-#include <string>
 #include <algorithm>
 
+using std::string;
+using std::unordered_map;
+using std::deque;
 
 	/**
  * Finds anagrams and builds a multidimensional array list.  Size of the first dimension
@@ -54,30 +56,31 @@
 	* @param possibleAnagrams ArrayList of strings such as "ate", "tea", "note", "tone"
 	* @return
 	*/
-	//public HashMap<String, List<String>> buildAnagramMap(List<String> possibleAnagrams) {
-	//	var solution = new HashMap<String, List<String>>();
+std::unordered_map<std::string, deque<std::string>>  AnagramSolver::buildAnagramMap(std::deque<std::string> possibleAnagrams) {
+	std::unordered_map<std::string, deque<std::string>> solution;
 
-	//	// 1st iteration the list will be empty so first string will be added
-	//	// 2nd iteration - if not anagram of any of the first elements of each list then add a new array list with s
-	//	//    as the first element
-	//	for (String a : possibleAnagrams) {
-	//		boolean inserted = false;
+		// 1st iteration the list will be empty so first string will be added
+		// 2nd iteration - if not anagram of any of the first elements of each list then add a new array list with s
+		//    as the first element
+		for (string a : possibleAnagrams) {
+			bool inserted = false;
 
-	//		for (String key : solution.keySet()) {
+			for (auto i = solution.begin(); i != solution.end(); ++i) {
 
-	//			if (isAnagram(key.toCharArray(), a.toCharArray())) {
-	//				solution.get(key).add(a);
-	//				inserted = true;
-	//			}
-	//		}
+				if (isAnagram(i->first, a)) {
+					i->second.push_back(a);
+					inserted = true;
+				}
+			}
 
-	//		if (!inserted) {
-	//			var list = new ArrayList<String>();
-	//			solution.put(a, list);
-	//		}
-	//	}
-	//	return solution;
-	//}
+			// Add a pair<string, deque<string>> to the map where the value is an empty deque
+			if (!inserted) {
+				std::deque<std::string> anagrams;
+				solution[a] = anagrams;
+			}
+		}
+		return solution;
+	}
 
 	/**
 	 * Tests whether the parameters are anagrams of one another.  An anagram of a word is one that uses the same characters
