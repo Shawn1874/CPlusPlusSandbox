@@ -12,6 +12,7 @@ class AnagramSolver
 public:
   static bool isAnagram(std::string, std::string);
   static std::unordered_map<std::string, std::deque<std::string> > buildAnagramMap(std::deque<std::string> possibleAnagrams);
+  static std::deque < std::deque < std::string >> buildAnagramList(std::deque<std::string>  possibleAnagrams);
 };
 
 #endif

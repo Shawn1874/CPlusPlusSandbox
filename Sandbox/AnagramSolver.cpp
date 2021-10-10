@@ -6,7 +6,7 @@ using std::unordered_map;
 using std::deque;
 
 	/**
- * Finds anagrams and builds a multidimensional array list.  Size of the first dimension
+ * Finds anagrams and builds a multidimensional container.  Size of the first dimension
  * is the number of sets of anagrams found, and 2nd dimension 1 row each for each set of anagrams.
  *
  * Approach:
@@ -16,34 +16,33 @@ using std::deque;
  * loop over all rows and check if the next string is an anagram of the first word in the row.
  * Either append the string to an existing row or add it as the first string to a new row.
  *
- * @param possibleAnagrams Arraylist of strings such as "ate", "tea", "note", "tone"
- * @return multi-dimensional ArrayList<ArrayList<String>> where each row is a set of anagrams
+ * @param possibleAnagrams container of strings such as "ate", "tea", "note", "tone"
+ * @return deque < deque < string >> where each row is a set of anagrams
  */
- //public ArrayList<ArrayList<String>> buildAnagramList(ArrayList<String> possibleAnagrams) {
- //	var solution = new ArrayList<ArrayList<String>>();
+deque < deque < string >> AnagramSolver::buildAnagramList(deque<string>  possibleAnagrams) {
+	deque < deque < string >> solution;
 
- //	// 1st iteration the list will be empty so first string will be added
- //	// 2nd iteration - if not anagram of any of the first elements of each list then add a new array list with s
- //	//    as the first element
- //	for (String a : possibleAnagrams) {
- //		boolean inserted = false;
+ 	// 1st iteration the list will be empty so first string will be added
+ 	// 2nd iteration - if not anagram of any of the first elements of each list then add a new array list with s
+ 	//    as the first element
+	for (string a : possibleAnagrams) {
+ 		bool inserted = false;
 
- //		for (ArrayList<String> s : solution) {
+ 		for (deque<string>& d : solution) {
 
- //			if (isAnagram(s.get(0).toCharArray(), a.toCharArray())) {
- //				inserted = true;
- //				s.add(a);
- //			}
- //		}
+ 			if (isAnagram(d[0], a)) {
+ 				inserted = true;
+ 				d.push_back(a);
+ 			}
+ 		}
 
- //		if (!inserted) {
- //			var list = new ArrayList<String>();
- //			list.add(a);
- //			solution.add(list);
- //		}
- //	}
- //	return solution;
- //}
+ 		if (!inserted) {
+			deque < string > temp { a }; 
+ 			solution.push_back(temp);
+ 		}
+ 	}
+ 	return solution;
+ }
 
  /**
 	* Finds anagrams and builds a HashMap<String, ArrayList<String>>.
@@ -56,8 +55,8 @@ using std::deque;
 	* @param possibleAnagrams ArrayList of strings such as "ate", "tea", "note", "tone"
 	* @return
 	*/
-std::unordered_map<std::string, deque<std::string>>  AnagramSolver::buildAnagramMap(std::deque<std::string> possibleAnagrams) {
-	std::unordered_map<std::string, deque<std::string>> solution;
+unordered_map<string, deque<string>>  AnagramSolver::buildAnagramMap(deque<string> possibleAnagrams) {
+	unordered_map<string, deque<string>> solution;
 
 		// 1st iteration the list will be empty so first string will be added
 		// 2nd iteration - if not anagram of any of the first elements of each list then add a new array list with s
@@ -75,7 +74,7 @@ std::unordered_map<std::string, deque<std::string>>  AnagramSolver::buildAnagram
 
 			// Add a pair<string, deque<string>> to the map where the value is an empty deque
 			if (!inserted) {
-				std::deque<std::string> anagrams;
+				deque<string> anagrams;
 				solution[a] = anagrams;
 			}
 		}
@@ -88,12 +87,12 @@ std::unordered_map<std::string, deque<std::string>>  AnagramSolver::buildAnagram
 	 *
 	 * Approach:
 	 * First a short circuit evaluation is performed since the arrays must be the same length to be anagrams.  If the length
-	 * matches then sort the two
+	 * matches then sort the two input parameters
 	 * @param first string
 	 * @param second string to compare against first
 	 * @return true if the the two words are anagrams and false if these are not anagrams.
 	 */
-bool AnagramSolver::isAnagram(std::string first, std::string second) {
+bool AnagramSolver::isAnagram(string first, string second) {
 
   if (first.size() != second.size()) {
     return false;
@@ -101,8 +100,8 @@ bool AnagramSolver::isAnagram(std::string first, std::string second) {
   else {
     // in order for one to be an anagram of another, each character must occur the same number of times 
     // in the other string
-    std::sort(second.begin(), second.end());
-    std::sort(first.begin(), first.end());
+    sort(second.begin(), second.end());
+    sort(first.begin(), first.end());
     return (first == second);
   }
 }
