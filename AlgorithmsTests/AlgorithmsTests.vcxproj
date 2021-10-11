@@ -154,17 +154,19 @@
     <ClInclude Include="TestBackInserter.h" />
     <ClInclude Include="TestCustomAlgorithms.h" />
     <ClInclude Include="TestFileIOApis.h" />
+    <ClInclude Include="TestFindMissingNumberInRange.h" />
     <ClInclude Include="TestLamdas.h" />
     <ClInclude Include="TestMathFunctions.h" />
     <ClInclude Include="TestMinMaxOperations.h" />
     <ClInclude Include="TestRemove.h" />
     <ClInclude Include="TestRotate.h" />
-    <ClInclude Include="TestSearch.h" />
+    <ClInclude Include="TestFindMissingNumberInContainer.h" />
     <ClInclude Include="TestSort.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AlgorithmsTests.cpp" />
     <ClCompile Include="AnagramSolverTest.cpp" />
+    <ClCompile Include="TestFindMissingNumberInRange.cpp" />
     <ClCompile Include="TestSort.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -180,7 +182,7 @@
     <ClCompile Include="TestMinMaxOperations.cpp" />
     <ClCompile Include="TestRemove.cpp" />
     <ClCompile Include="TestRotate.cpp" />
-    <ClCompile Include="TestSearch.cpp" />
+    <ClCompile Include="TestFindMissingNumberInContainer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,5 +1,7 @@
 #pragma once
 #include <algorithm>
+#include <vector>
+
 class Algorithms
 {
 public:
@@ -59,6 +61,51 @@ public:
 
       found = false;
     }
+  }
+
+    /*
+
+    Given an array nums containing n distinct numbers in the range [0, n], return the only
+    number in the range that is missing from the array. 
+
+    example:
+      Input: nums = [3,0,1] with a size of 3 therefore n = 3
+      Output: 2
+
+    */
+  static int findMissingNumberInContainer(const std::vector<int> values) {
+    std::vector<int>::size_type n(0), endRange(values.size());
+    auto begin = values.begin(); 
+    auto last = values.end();
+    for (; n < endRange; ++n) {
+      if (std::find(values.begin(), values.end(), n) == last) {
+        return n;
+      }
+    }
+    return n;
+  }
+
+  /*
+
+   Given an array nums containing n distinct numbers in the range [min, max], return the only
+   number in the range that is missing from the array. 
+
+   example:
+     Input: nums = [3,0,1,-1] where min = -1, and max = 3
+     Output: 2 or max + 1 if the range was not missing anything
+
+   */
+  template <typename FwdIter>
+    static int findMissingNumberInRange(FwdIter begin, FwdIter end, int min, int max)
+  {
+      int n = min;
+      for (; n <= max; n++) {
+        if (std::find(begin, end, n) == end) {
+          return n;
+        }
+      }
+
+      return n;
   }
 };
 

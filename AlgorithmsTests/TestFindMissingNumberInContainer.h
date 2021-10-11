@@ -1,10 +1,7 @@
 #pragma once
 #include "gtest/gtest.h"
-class TestSearch :
+class TestFindMissingNumberInContainer :
 	public ::testing::Test
 {
-public:
-	TestSearch();
-	~TestSearch();
 };
 
