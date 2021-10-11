@@ -77,8 +77,9 @@ public:
     std::vector<int>::size_type n(0), endRange(values.size());
     auto begin = values.begin(); 
     auto last = values.end();
+
     for (; n < endRange; ++n) {
-      if (std::find(values.begin(), values.end(), n) == last) {
+      if (std::find(begin, last, n) == last) {
         return n;
       }
     }
