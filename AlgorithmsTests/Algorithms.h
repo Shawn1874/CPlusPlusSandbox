@@ -88,11 +88,14 @@ public:
   /*
 
    Given an array nums containing n distinct numbers in the range [min, max], return the only
-   number in the range that is missing from the array. 
+   number in the range that is missing from the array. The actual range must be at least of 
+   length (max - min) otherwise the result will be undefined behavior and the function may 
+   return a non-sensical value.  If the range is (max - min) + 1 and there is no value missing
+   then the return value will be max + 1.
 
    example:
      Input: nums = [3,0,1,-1] where min = -1, and max = 3
-     Output: 2 or max + 1 if the range was not missing anything
+     Output: 2
 
    */
   template <typename FwdIter>

@@ -29,3 +29,13 @@ TEST_F(TestFindMissingNumberInRange, TestNoMissingNumberInRange)
   EXPECT_EQ(result, 5);
 }
 
+/// <summary>
+/// Test with range from -1 through 4 but a negative number is missing.
+TEST_F(TestFindMissingNumberInRange, TestNegativeMissingNumberInRange)
+{
+  std::vector<int> values = { 3, 1, 2, 0, 4 };
+
+  auto result = Algorithms::findMissingNumberInRange(values.begin(), values.end(), -1, 4);
+  EXPECT_EQ(result, -1);
+}
+
