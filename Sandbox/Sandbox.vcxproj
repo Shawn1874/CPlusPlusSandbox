@@ -19,9 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\AlgorithmsTests\Algorithms.cpp" />
     <ClCompile Include="AnagramSolver.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\AlgorithmsTests\Algorithms.h" />
     <ClInclude Include="AnagramSolver.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
