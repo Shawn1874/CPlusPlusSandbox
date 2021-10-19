@@ -3,8 +3,5 @@
 
 class TestLamdas : public ::testing::Test
 {
-public:
-  TestLamdas();
-  virtual ~TestLamdas();
 };
 
