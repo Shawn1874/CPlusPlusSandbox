@@ -166,6 +166,7 @@
   <ItemGroup>
     <ClCompile Include="AlgorithmsTests.cpp" />
     <ClCompile Include="AnagramSolverTest.cpp" />
+    <ClCompile Include="TestBubbleSort.cpp" />
     <ClCompile Include="TestFindMissingNumberInRange.cpp" />
     <ClCompile Include="TestSort.cpp" />
     <ClCompile Include="stdafx.cpp">
