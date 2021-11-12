@@ -112,12 +112,23 @@ public:
       return n;
   }
 
-    template <typename ContainerT, typename ComparatorT> 
+ template <typename ContainerT, typename ComparatorT>
     static void bubbleSort(ContainerT& values, ComparatorT compare) {
-     for (size_t i = 0; i < values.size() - 1; ++i) {
+      for (size_t i = 0; i < values.size() - 1; ++i) {
         for (size_t j = 0; j < values.size() - 1; ++j) {
           if (compare(values[j], values[j + 1])) {
             std::swap(values[j], values[j + 1]);
+          }
+        }
+      }
+    }
+
+    template <typename ContainerT, typename ComparatorT>
+    static void bubbleSort2(ContainerT& values, ComparatorT compare) {
+      for (size_t i = 0; i < values.size(); ++i) {
+        for (size_t j = i + 1; j < values.size(); ++j) {
+          if (compare(values[i], values[j])) {
+            std::swap(values[i], values[j]);
           }
         }
       }
