@@ -57,6 +57,9 @@
     <ClInclude Include="TestFindMissingNumberInContainer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TestTypeTraits.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -102,6 +105,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TestBubbleSort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TestTypeTraits.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

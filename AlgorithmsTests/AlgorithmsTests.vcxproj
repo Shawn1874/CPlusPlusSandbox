@@ -162,6 +162,7 @@
     <ClInclude Include="TestRotate.h" />
     <ClInclude Include="TestFindMissingNumberInContainer.h" />
     <ClInclude Include="TestSort.h" />
+    <ClInclude Include="TestTypeTraits.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AlgorithmsTests.cpp" />
@@ -184,6 +185,7 @@
     <ClCompile Include="TestRemove.cpp" />
     <ClCompile Include="TestRotate.cpp" />
     <ClCompile Include="TestFindMissingNumberInContainer.cpp" />
+    <ClCompile Include="TestTypeTraits.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
