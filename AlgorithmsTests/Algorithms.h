@@ -135,16 +135,16 @@ public:
       }
     }
 
-    static void factorial(int* a, int* result) {
-      if (nullptr == a || nullptr == result) {
+    static void factorial(int a, int* result) {
+      if (nullptr == result) {
         throw new std::invalid_argument("1 or more inputs is a nullptr");
       }
 
-      *result = *a;
+      *result = a;
 
-      while (*a > 1) {
-        *result *= (*a - 1);
-        --(*a);
+      while (a > 1) {
+        *result *= (a - 1);
+        --a;
       }
     }
 };
