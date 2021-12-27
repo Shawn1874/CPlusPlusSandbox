@@ -90,3 +90,30 @@ TEST_F(TestCustomAlgorithms, TestMergeSortedDeques)
   EXPECT_EQ(d[2], 9);
   EXPECT_EQ(d[3], 12);
 }
+
+TEST_F(TestCustomAlgorithms, TestFactorial)
+{
+  int  value{ 0 }, result{ 0 };
+  Algorithms::factorial(&value, &result);
+  EXPECT_EQ(result, 0);
+
+  value = 1; 
+  Algorithms::factorial(&value, &result);
+  EXPECT_EQ(result, 1);
+
+  value = 2;
+  Algorithms::factorial(&value, &result);
+  EXPECT_EQ(result, 2);
+
+  value = 3;
+  Algorithms::factorial(&value, &result);
+  EXPECT_EQ(result, 6);
+
+  value = 5; // 5 * 4 * 3 * 2 * 1 = 120
+  Algorithms::factorial(&value, &result);
+  EXPECT_EQ(result, 120);
+
+  value = 7; // 5 * 4 * 3 * 2 * 1 = 120
+  Algorithms::factorial(&value, &result);
+  EXPECT_EQ(result, 5040);
+}
