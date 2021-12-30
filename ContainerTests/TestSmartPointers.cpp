@@ -1,12 +1,12 @@
 #include "stdafx.h"
 #include "TestSmartPointers.h"
 #include <memory>
+#include <vector>
 #include "Integer.h"
 
 TestSmartPointers::TestSmartPointers()
 {
 }
-
 
 TestSmartPointers::~TestSmartPointers()
 {
@@ -14,7 +14,7 @@ TestSmartPointers::~TestSmartPointers()
 
 TEST_F(TestSmartPointers, TestUniquePtrRelease)
 {
-  auto p = std::make_unique<int>(0);
+  auto p = std::make_unique<int>(0);  // make_unique is a method so () needed
   *p = 5;
 
   EXPECT_NE(*p, NULL);
@@ -27,10 +27,42 @@ TEST_F(TestSmartPointers, TestUniquePtrRelease)
 
 TEST_F(TestSmartPointers, TestUniquePtrObservers)
 {
-  auto p = std::unique_ptr<Integer>(new Integer(5));
+  std::unique_ptr<Integer> p{ new Integer(5) };
+
+  // Test operators
   EXPECT_TRUE(p);
+  EXPECT_EQ(*p, 5);  // works because of the comparison operator of Integer class
+  EXPECT_EQ( (*p).GetValue(), 5);  // *p returns a reference to the object
+  EXPECT_EQ(p->GetValue(), 5);     // p-> returns pointer to the object
+
+  // Test reset
+  p.reset(new Integer{ 300 });
+  EXPECT_EQ(*p, 300);  // works because of the comparison operator of Integer class
+  EXPECT_EQ((*p).GetValue(), 300);  // *p returns a reference to the object
+  EXPECT_EQ(p->GetValue(), 300);     // p-> returns pointer to the object
+
+  // Test get
   auto p2 = p.get();
   EXPECT_TRUE(p);
   EXPECT_TRUE(p2);
+  EXPECT_EQ(*p2, 300);
+}
+
+TEST_F(TestSmartPointers, TestSharedPtrUseCount)
+{
+  std::shared_ptr<Integer> p{ new Integer(5) };
+  EXPECT_EQ(p.use_count(), 1);
+  EXPECT_EQ(p.get()->GetValue(), 5);
+}
+
+TEST_F(TestSmartPointers, TestSharedPtrOfVector)
+{
+  std::shared_ptr<std::vector<int>> v{ new std::vector<int> {1, 2, 3, 4, 5} };
+  EXPECT_EQ(v->size(), 5);
+  v->push_back(6);
+  EXPECT_EQ(v->at(5), 6);
+
+  // how to use sub-script operator to get at elements
+  EXPECT_EQ((*v)[5], 6);
 }
 
