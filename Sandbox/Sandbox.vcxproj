@@ -21,10 +21,12 @@
   <ItemGroup>
     <ClCompile Include="..\AlgorithmsTests\Algorithms.cpp" />
     <ClCompile Include="AnagramSolver.cpp" />
+    <ClCompile Include="Integer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\AlgorithmsTests\Algorithms.h" />
     <ClInclude Include="AnagramSolver.h" />
+    <ClInclude Include="Integer.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

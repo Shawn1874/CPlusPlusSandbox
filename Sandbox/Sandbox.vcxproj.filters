@@ -21,12 +21,18 @@
     <ClCompile Include="..\AlgorithmsTests\Algorithms.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Integer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnagramSolver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\AlgorithmsTests\Algorithms.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Integer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
