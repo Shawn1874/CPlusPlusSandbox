@@ -66,3 +66,23 @@ TEST_F(TestSmartPointers, TestSharedPtrOfVector)
   EXPECT_EQ((*v)[5], 6);
 }
 
+TEST_F(TestSmartPointers, TestWeakPtrLock)
+{
+  std::weak_ptr<int> wk;
+
+  {
+    auto sp = std::make_shared<int>(5);
+    wk = sp;
+    EXPECT_EQ(5, *sp);
+    EXPECT_EQ(1, sp.use_count());
+    EXPECT_EQ(1, wk.use_count());
+    EXPECT_FALSE(wk.expired());
+    auto sp2 = wk.lock(); // increment use count and get a shared pointer
+    EXPECT_EQ(5, *sp2);
+    EXPECT_EQ(2, sp.use_count());
+    EXPECT_EQ(2, wk.use_count());
+  }
+
+  EXPECT_TRUE(wk.expired());
+}
+
