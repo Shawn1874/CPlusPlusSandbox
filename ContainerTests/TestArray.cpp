@@ -26,7 +26,7 @@ TEST_F(TestArray, TestAccessors)
 	int series = 1;
 	for (auto current = values.begin(); current != values.end(); ++current)
 	{
-		*current = std::pow<int, int>(series, 2);
+		*current = static_cast<int>(std::pow(series, 2));
 		++series;
 	}
 	EXPECT_EQ(values.front(), 1);
@@ -40,7 +40,7 @@ TEST_F(TestArray, TestAccessors)
   squares.at(1) = 8;
   EXPECT_NE(values, squares);
 
-  EXPECT_THROW(squares.at(5), std::out_of_range);
+  EXPECT_THROW(auto value = squares.at(5), std::out_of_range);
 
 }
 

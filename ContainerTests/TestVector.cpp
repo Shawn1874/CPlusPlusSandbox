@@ -60,8 +60,8 @@ TEST_F(TestVector, VectorAssignTest)
 TEST_F(TestVector, TestAtMethodOutOfRange)
 {
 	std::vector<int> values = { 1, 2, 3, 4, 5 };
-	EXPECT_THROW(values.at(5), std::out_of_range);
-	EXPECT_NO_THROW(values.at(4));
+	EXPECT_THROW(auto value = values.at(5), std::out_of_range);
+	EXPECT_NO_THROW(auto value = values.at(4));
 }
 
 TEST_F(TestVector, Iterators)

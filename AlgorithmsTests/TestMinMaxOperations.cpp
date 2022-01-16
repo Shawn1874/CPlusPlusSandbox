@@ -45,7 +45,6 @@ TEST_F(TestMinMaxOperations, TestMax)
 
   // std::min, std::max also work with initiaalizer lists
   constexpr int size = std::max({ 55, 25, 35, 20, 10 });
-  double fpNumbers[size];  
   EXPECT_EQ(size, 55);
 }
 
