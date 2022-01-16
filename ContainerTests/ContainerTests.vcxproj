@@ -173,6 +173,7 @@
     <ClCompile Include="TestLiterals.cpp" />
     <ClCompile Include="TestStack.cpp" />
     <ClCompile Include="TestSmartPointers.cpp" />
+    <ClCompile Include="TestUnions.cpp" />
     <ClCompile Include="TestVector.cpp" />
     <ClCompile Include="UnorderedMap.cpp" />
   </ItemGroup>

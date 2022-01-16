@@ -57,7 +57,7 @@ TEST_F(TestVector, VectorAssignTest)
 	EXPECT_EQ(values[3], 40);
 }
 
-TEST_F(TestVector, ExceptionsTest)
+TEST_F(TestVector, TestAtMethodOutOfRange)
 {
 	std::vector<int> values = { 1, 2, 3, 4, 5 };
 	EXPECT_THROW(values.at(5), std::out_of_range);
@@ -81,4 +81,21 @@ TEST_F(TestVector, Iterators)
 	}
 	actual.erase(actual.end() - 1);
 	EXPECT_EQ(actual, expected);
+}
+
+TEST_F(TestVector, TestExplictlyTypesInitializer)
+{
+	// setup something like a bitmap but with the template specialization vector<bool>
+	// 3rd value indicates whether high priority or low priority
+	std::vector<bool> values = { true, true, false, true, false, false };
+
+	// high priority is deduced as type std::vector<bool>::reference which is a proxy class that can be converted to bool
+	auto highPriority = values[2];
+	EXPECT_FALSE(highPriority);  // 
+
+	// The static_cast forces the conversion to a bool so that the auto type deduction is bool
+	// This is an example of the explictly typed initializer idiom described by Scott Meyers in 
+	// "Effective Modern C++"
+	auto lowPriority = static_cast<bool>(values[2]);
+	EXPECT_FALSE(lowPriority);
 }

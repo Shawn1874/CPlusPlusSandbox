@@ -29,3 +29,15 @@ TEST(TestInitializerList, TestCapacityMethods) {
   EXPECT_EQ(list.size(), 5);
   EXPECT_FALSE(std::empty(list));
 }
+
+TEST(TestInitializerList, TestAuto)
+{
+  auto n = { 5 }; //initializer list
+  EXPECT_EQ(1, n.size()); // if n was an int there would be no method to call!
+
+  auto m = *n.begin();
+  EXPECT_EQ(5, m);
+
+  // auto m = (5);
+  // m.size();  // wouldn't compile
+}
