@@ -90,6 +90,7 @@
       <SDLCheck>true</SDLCheck>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>$(SolutionDir)\Account;$(SolutionDir)\Sandbox</AdditionalIncludeDirectories>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -174,6 +175,7 @@
     <ClCompile Include="TestLiterals.cpp" />
     <ClCompile Include="TestStack.cpp" />
     <ClCompile Include="TestSmartPointers.cpp" />
+    <ClCompile Include="TestTypeInfo.cpp" />
     <ClCompile Include="TestUnions.cpp" />
     <ClCompile Include="TestVector.cpp" />
     <ClCompile Include="UnorderedMap.cpp" />
