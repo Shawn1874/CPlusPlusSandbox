@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AlgorithmsTests", "Algorith
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sandbox", "Sandbox\Sandbox.vcxproj", "{4CDBFD18-4777-4A0A-813E-8580AE0511B6}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Account", "Account\Account.vcxproj", "{80C4613C-7892-4103-97A1-0A18BA8466DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,20 @@ Global
 		{4CDBFD18-4777-4A0A-813E-8580AE0511B6}.Release|Win32.Build.0 = Release|Win32
 		{4CDBFD18-4777-4A0A-813E-8580AE0511B6}.Release|x64.ActiveCfg = Release|x64
 		{4CDBFD18-4777-4A0A-813E-8580AE0511B6}.Release|x64.Build.0 = Release|x64
+		{80C4613C-7892-4103-97A1-0A18BA8466DE}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{80C4613C-7892-4103-97A1-0A18BA8466DE}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{80C4613C-7892-4103-97A1-0A18BA8466DE}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{80C4613C-7892-4103-97A1-0A18BA8466DE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{80C4613C-7892-4103-97A1-0A18BA8466DE}.Debug|Win32.Build.0 = Debug|Win32
+		{80C4613C-7892-4103-97A1-0A18BA8466DE}.Debug|x64.ActiveCfg = Debug|x64
+		{80C4613C-7892-4103-97A1-0A18BA8466DE}.Debug|x64.Build.0 = Debug|x64
+		{80C4613C-7892-4103-97A1-0A18BA8466DE}.Release|Any CPU.ActiveCfg = Release|Win32
+		{80C4613C-7892-4103-97A1-0A18BA8466DE}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{80C4613C-7892-4103-97A1-0A18BA8466DE}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{80C4613C-7892-4103-97A1-0A18BA8466DE}.Release|Win32.ActiveCfg = Release|Win32
+		{80C4613C-7892-4103-97A1-0A18BA8466DE}.Release|Win32.Build.0 = Release|Win32
+		{80C4613C-7892-4103-97A1-0A18BA8466DE}.Release|x64.ActiveCfg = Release|x64
+		{80C4613C-7892-4103-97A1-0A18BA8466DE}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
