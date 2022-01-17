@@ -162,6 +162,7 @@
   <ItemGroup>
     <ClCompile Include="TestAccounts.cpp" />
     <ClCompile Include="ContainerTests.cpp" />
+    <ClCompile Include="TestConcurrency.cpp" />
     <ClCompile Include="TestEnumerations.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
