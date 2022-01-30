@@ -19,6 +19,43 @@ public:
     }
   }
 
+  template <typename T> 
+  static T add(T x, T y)
+  {
+    return x + y;
+  }
+
+  template <typename T>
+  static T sum(T* values, size_t size) {
+    T result{};
+    for (size_t n = 0; n < size; ++n)
+    {
+      result += values[n];
+    }
+    return result;
+  }
+
+  template <class T> // just to show that most of the time class or typename works
+  static std::pair<T, T> minMax(T* values, size_t size) 
+  {
+    // first = min, second = max
+    auto result = std::make_pair(values[0], values[0]);
+
+    for (size_t n = 1; n < size; ++n)
+    {
+      if (values[n] < result.first) 
+      {
+        result.first = values[n];
+      }
+
+      if (values[n] > result.second) 
+      {
+        result.second = values[n];
+      }
+    }
+    return result;
+  }
+
   /*
   * Merges sorted range source into the sorted range destination.  If ranges are not sorted, the behavior
   * is undefined.  Caller must ensure that destination is large enough to contain the merged ranges or

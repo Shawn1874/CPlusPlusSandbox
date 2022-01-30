@@ -35,6 +35,41 @@ TEST_F(TestCustomAlgorithms, TestReverseVector)
 
 }
 
+TEST_F(TestCustomAlgorithms, TestAdd) {
+  EXPECT_EQ(20, Algorithms::add(15, 5));
+  EXPECT_EQ(20, Algorithms::add(5, 15));
+
+  EXPECT_EQ(20.0, Algorithms::add(15.2, 4.8));
+  EXPECT_EQ(20.0, Algorithms::add(4.8, 15.2));
+
+  EXPECT_EQ('b', Algorithms::add('a', static_cast<char>(1)));
+}
+
+TEST_F(TestCustomAlgorithms, TestSum)
+{
+  std::vector<int> original = { 9, 7, 5, 3, 1 };
+
+  EXPECT_EQ(25, Algorithms::sum(&original[0], original.size()));
+
+  std::vector<char> characters{ ' ', '!', '(' }; // 32 + 33 + 40 = 105 ('i')
+  EXPECT_EQ('i', Algorithms::sum(&characters[0], characters.size()));
+}
+
+TEST_F(TestCustomAlgorithms, TestMinMax)
+{
+  std::vector<int> original = { 9, 2, 5, 15, 3, 1 };
+
+  auto result = Algorithms::minMax(&original[0], original.size());
+  EXPECT_EQ(1, result.first);
+  EXPECT_EQ(15, result.second);
+
+  std::vector<char> characters{ 'z', 'a', 'w', 'T', 'c', 'L' };
+  result = Algorithms::minMax(&characters[0], characters.size());
+  EXPECT_EQ('L', result.first);
+  EXPECT_EQ('z', result.second);
+}
+
+
 TEST_F(TestCustomAlgorithms, TestMergeSortedVectors)
 {
   std::vector<int> a = { 0, 1, 7, 11, 0, 0, 0, 0};
