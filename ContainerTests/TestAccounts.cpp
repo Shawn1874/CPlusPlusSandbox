@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "gtest/gtest.h"
 #include "Checking.h"
+#include "AccountsFactory.h"
 #include <memory>
 
 TEST(TestCheckingAccount, TestConstructor) {
@@ -34,4 +35,10 @@ TEST(TestCheckingAccount, TestDeposit) {
   EXPECT_EQ(initialBalance, checking->GetBalance());
   checking->Deposit(400.0f);
   EXPECT_EQ(initialBalance + 400.0f, checking->GetBalance());
+}
+
+TEST(TestAccountsFactory, TestConstructor) {
+   AccountsFactory factory;
+   auto checkingAcct = factory.buildCheckingAccount("Rick Scott", 2000.0f);
+   auto savingsAcct = factory.buildSavingsAccount("Rick Scott", 20000.0f, 0.1f);
 }

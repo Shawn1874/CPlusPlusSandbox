@@ -79,3 +79,17 @@ TEST(TestTypeInfo, TestStaticCast)
   Savings* savings2 = static_cast<Savings*>(checkingAcct);
   EXPECT_FALSE(nullptr == savings2);
 }
+
+/*
+* Test new C++11 fixed width types
+*/
+TEST(TestTypeInfo, TestFixedWidthTypes)
+{
+#ifdef _M_X64
+   EXPECT_EQ(sizeof(uintptr_t), 8);
+   EXPECT_EQ(sizeof(uint64_t), 8);
+#else
+   EXPECT_EQ(sizeof(uintptr_t), 4);
+   EXPECT_EQ(sizeof(uint64_t), 8);
+#endif
+}

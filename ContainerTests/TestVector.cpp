@@ -99,3 +99,24 @@ TEST_F(TestVector, TestExplictlyTypesInitializer)
 	auto lowPriority = static_cast<bool>(values[2]);
 	EXPECT_FALSE(lowPriority);
 }
+
+TEST_F(TestVector, TestCopyFromString)
+{
+   char* vanilla_thdr = "test";
+
+   std::vector<unsigned char> header(strlen(vanilla_thdr));
+   for (int j = strlen(vanilla_thdr); --j >= 0;)
+   {
+      header[j] = vanilla_thdr[j];
+   }
+   EXPECT_EQ(4, header.size());
+
+
+   std::vector<unsigned char> header2(strlen(vanilla_thdr));
+   for (auto j = 0; j < strlen(vanilla_thdr); ++j) 
+	{ 
+		header2[j] = vanilla_thdr[j]; 
+	}
+
+   EXPECT_EQ(header, header2);
+}

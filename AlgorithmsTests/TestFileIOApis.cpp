@@ -82,7 +82,8 @@ TEST_F(TestFileIOApis, WriteOnlyTest)
 TestFileIOApis::TestFileIOApis()
   : testFileName ("test.txt")
 {
-  FILE *fp = fopen(testFileName, "w+");
+   FILE* fp{ nullptr };
+  auto result = fopen_s(&fp, testFileName, "w+");
   const char* msg = "hello world";
   if (fp)
   {
