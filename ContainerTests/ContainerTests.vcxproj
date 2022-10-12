@@ -190,6 +190,7 @@
     <ClCompile Include="TestInitializerList.cpp" />
     <ClCompile Include="TestIntegerWrapper.cpp" />
     <ClCompile Include="TestLiterals.cpp" />
+    <ClCompile Include="TestRegEx.cpp" />
     <ClCompile Include="TestStack.cpp" />
     <ClCompile Include="TestSmartPointers.cpp" />
     <ClCompile Include="TestTypeInfo.cpp" />

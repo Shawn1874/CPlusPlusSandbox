@@ -33,6 +33,7 @@
 
 # Other
 *.sdf
+*.vcxproj.user
 
 # Python cache files
 *.pyc
