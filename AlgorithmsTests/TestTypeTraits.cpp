@@ -69,3 +69,30 @@ TEST_F(TestTypeTraits, TestIsReference)
 	EXPECT_FALSE(std::is_rvalue_reference<int>());  // value type so is not a reference at all
 	EXPECT_FALSE(std::is_lvalue_reference<int>());  // value type so is not a reference at all
 }
+
+TEST_F(TestTypeTraits, TestSprintf)
+{
+	char tprop_str[13] = { 0 };
+	int m_subtractor[2] = { 1, 2 };
+	double m_multiplier[2] = { 1.125, 2.0 };
+	// Verify the string without the = modifier
+	sprintf(tprop_str, "%07.3f%04d", m_multiplier[0], m_subtractor[0]);
+	EXPECT_STREQ(tprop_str, "001.1250001");
+
+	// Verify the string with the modifier which should add the + to positive numbers
+	sprintf(tprop_str, "%07.3f%+04d", m_multiplier[0], m_subtractor[0]);
+	EXPECT_STREQ(tprop_str, "001.125+001");
+
+	// Verify the string with the modifier which should add the + to positive numbers
+	m_subtractor[0] = 0;
+	sprintf(tprop_str, "%07.3f%+04d", m_multiplier[0], m_subtractor[0]);
+	EXPECT_STREQ(tprop_str, "001.1250000");
+
+	// test negative number.  With or without the + modifier the result will be the same
+	m_subtractor[0] = -1;
+	sprintf(tprop_str, "%07.3f%+04d", m_multiplier[0], m_subtractor[0]);
+	EXPECT_STREQ(tprop_str, "001.125-001");
+	sprintf(tprop_str, "%07.3f%04d", m_multiplier[0], m_subtractor[0]);
+	EXPECT_STREQ(tprop_str, "001.125-001");
+
+}

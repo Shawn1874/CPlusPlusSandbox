@@ -25,6 +25,25 @@ TEST_F(TestSmartPointers, TestUniquePtrRelease)
   GTEST_ASSERT_EQ(p, nullptr);
 }
 
+TEST_F(TestSmartPointers, TestEmptyUniquePtr)
+{
+    struct test {
+        int x;
+        int y;
+    };
+
+    std::unique_ptr<test> testPtr;
+
+    EXPECT_EQ(testPtr, nullptr);
+
+    EXPECT_EQ(testPtr.get(), nullptr);
+
+    std::auto_ptr<test> testAutoPtr;
+
+    EXPECT_FALSE(testAutoPtr.get());
+
+}
+
 TEST_F(TestSmartPointers, TestUniquePtrObservers)
 {
   std::unique_ptr<Integer> p{ new Integer(5) };

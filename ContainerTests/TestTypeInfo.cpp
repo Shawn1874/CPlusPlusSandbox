@@ -3,6 +3,7 @@
 #include "Checking.h"
 #include "Savings.h"
 #include <typeinfo>
+#include <cmath>
 
 /* 
 * Notice the return type of the typeid operator
@@ -92,4 +93,31 @@ TEST(TestTypeInfo, TestFixedWidthTypes)
    EXPECT_EQ(sizeof(uintptr_t), 4);
    EXPECT_EQ(sizeof(uint64_t), 8);
 #endif
+}
+
+struct TestPoint {
+   double x;
+   double y;
+   char* name;
+   int foo;
+};
+
+TEST(TestTypeInfo, TestDefaultInitialization)
+{
+   double value{};
+   int number{};
+   TestPoint p1{};
+   EXPECT_EQ(0.0, value);
+   EXPECT_EQ(0, number);
+   EXPECT_EQ(0.0, p1.x);
+   EXPECT_EQ(0.0, p1.y);
+   EXPECT_EQ(nullptr, p1.name);
+   EXPECT_EQ(0, p1.foo);
+}
+
+TEST(TestTypeInfo, TestRoundFloat)
+{
+   double value = floor((double) atof("1024.50000125012")); // *1000.0) / 1000.0;
+   EXPECT_EQ(1024.5, value);
+
 }
